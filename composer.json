@@ -1,0 +1,10 @@
+{
+    "name": "fsu/fsuip",
+    "minimum-stability": "dev",
+    "require": {
+    	"doctrine/orm": "*@stable",
+    	"doctrine/migrations": "*@dev",
+    	"ellislab/codeigniter": "dev-release/3.0",
+    	"twig/twig": "1.9.1"
+    }
+}
