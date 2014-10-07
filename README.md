@@ -1,2 +1,7 @@
-FSUIP
+FuAdmin
 =====
+
++ CodeIgniter
++ Composer
++ Doctrine
++ Twig
