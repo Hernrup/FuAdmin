@@ -1,0 +1,4 @@
+<?php
+	$_SERVER['argv'][1] = 'migrations:'.$_SERVER['argv'][1];
+	array_push($_SERVER['argv'] , "--configuration", realpath(__DIR__."/../application/config/migration.yml"));
+	include('Doctrine');

@@ -17,8 +17,15 @@ class User
 
     /**
      * @var string
+     * @Column(type="string", nullable=false)
      */
     protected $name;
+
+   /**
+     * @var string
+     * @Column(type="string", nullable=false)
+     */
+    protected $email;
 
     public function getId()
     {

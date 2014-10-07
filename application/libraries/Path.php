@@ -18,3 +18,6 @@ class Path{
 	    return join('/', $paths);
 	}
 }
+
+
+

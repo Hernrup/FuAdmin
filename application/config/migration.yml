@@ -1,0 +1,4 @@
+name: FuAdmin Migrations
+migrations_namespace: FuAdmin\Migrations
+table_name: migration_versions
+migrations_directory: ../application/database/migrations

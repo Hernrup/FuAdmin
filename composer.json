@@ -1,10 +1,12 @@
 {
-    "name": "fsu/fsuip",
+    "name": "fu/fuadmin",
     "minimum-stability": "dev",
     "require": {
     	"doctrine/orm": "*@stable",
     	"doctrine/migrations": "*@dev",
     	"ellislab/codeigniter": "dev-release/3.0",
-    	"twig/twig": "1.9.1"
-    }
+    	"twig/twig": "1.9.1",
+    	"symfony/yaml": "*"
+    },
+    "autoload": { "classmap": [ "application/models"] }
 }

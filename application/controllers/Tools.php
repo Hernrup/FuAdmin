@@ -1,4 +1,5 @@
 <?php
+
 class Tools extends CI_Controller {
 
 	public function test()
@@ -7,7 +8,7 @@ class Tools extends CI_Controller {
 		$em = $this->doctrine->em;
 
 		$user = new User();
-		$user->setName('My Name');
+		$user->setName('A name');
 		$em->persist($user);
 		$em->flush();
 
@@ -22,5 +23,19 @@ class Tools extends CI_Controller {
         }
 
 		echo "Created User with ID " . $user->getId() . "\n";
+
+		$users = $em->getRepository('User')->findAll();
+
+		foreach ($users as $u) {
+		    echo sprintf("%s-%s\n",$u->getId(), $u->getName());
+		}
 	}
+
+	public function phpinfo()
+	{
+
+		phpinfo();
+	}
+
+	
 }

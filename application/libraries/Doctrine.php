@@ -15,7 +15,7 @@ class Doctrine
         // Setup::registerAutoloadDirectory(__DIR__);
 
         // Load the database configuration from CodeIgniter
-        require APPPATH . '/config/database.php';
+        require APPPATH . 'config/database.php';
 
         $this->connection_options = array(
             'driver'        => $db['default']['dbdriver'],
