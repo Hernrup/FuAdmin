@@ -1,3 +1,4 @@
 /vendor/*
 /application/cache/*
 /application/logs/*
+/nbproject/private/
