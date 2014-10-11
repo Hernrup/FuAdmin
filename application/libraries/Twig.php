@@ -67,11 +67,13 @@ class Twig
 		return $template->render($data);
 	}
 
-	public function displayRoute($data = array()) 
+	public function displayRoute($data) 
 	{
+                $data = is_array($data) ? $data : get_object_vars($data);
 		$template = $this->CI->path->join($this->CI->router->fetch_class(),$this->CI->router->fetch_method().".twig");
 		$this->display($template, $data);
 	}
+        
 
 	public function display($template, $data = array()) 
 	{

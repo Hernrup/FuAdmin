@@ -4,6 +4,7 @@
  *
  * @User(name="user")
  * @Entity
+ * 
  */
 class User
 {
@@ -30,26 +31,85 @@ class User
 
    /**
      * @var string
-     * @Column(type="string", nullable=false)
+     * @Column(type="string", nullable=false, unique=true)
      */
     protected $email;
     
-    public function setEmail($email) {
-        $this->email = $email;
-    }
+    /**
+     *
+     * @var string
+     * @Column (type="string", nullable=false, length=255)
+     */
+    protected $password;
 
-    public function getId()
-    {
+
+    /**
+     *
+     * @var string 
+     * @Column(type="string", nullable=false, name="identificationnr")
+     */
+    protected $identificationNr;
+    
+    /**
+     *
+     * @var string
+     * @Column (type="string")
+     */
+    protected $cellphone;
+    
+    public function getId() {
         return $this->id;
     }
 
-    public function getName()
-    {
-        return $this->name;
+    public function getGivenname() {
+        return $this->givenname;
     }
 
-    public function setName($name)
-    {
-        $this->name = $name;
+    public function setGivenname($givenname) {
+        $this->givenname = $givenname;
     }
+
+    public function getLastname() {
+        return $this->lastname;
+    }
+
+    public function setLastname($lastname) {
+        $this->lastname = $lastname;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+    
+    public function getPassword() {
+        return $this->password;
+    }
+
+    public function setPassword($password) {
+        $this->password = $password;
+    }
+
+    public function getIdentificationNr() {
+        return $this->identificationNr;
+    }
+
+    public function setIdentificationNr($identificationNr) {
+        $this->identificationNr = $identificationNr;
+    }
+
+    public function getCellphone() {
+        return $this->cellphone;
+    }
+
+    public function setCellphone($cellphone) {
+        $this->cellphone = $cellphone;
+    }
+
+
+    
+    
 }
