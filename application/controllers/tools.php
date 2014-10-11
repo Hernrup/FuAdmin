@@ -27,6 +27,32 @@ class Tools extends CI_Controller {
             }
 	}
 
+    public function aclTest(){
+        $acl = new acl\Acl();
+        $roles = [];
+
+        $role = new Role();
+        $role->setId(1);
+
+        $roletype = new RoleType();
+        $roletype->setName("Styrelse");
+        $role->setRoleType($roletype);
+
+        array_push($roles,$role);
+
+        $resource = new acl\StaticResource();
+        $resource->setName("Dynamic");
+
+        echo $acl->isAllowed($roles,"login","register") ? 'y':'n';
+        echo "\n";
+        echo $acl->isAllowed($roles,"login","reset_password") ? 'y':'n';
+        echo "\n";
+        echo $acl->isAllowed($roles,$resource,"test") ? 'y':'n';
+        echo "\n";
+
+
+    }
+
 	public function phpinfo()
 	{
 

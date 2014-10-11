@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c863492-44f0-4b36-ae07-3fe506c9a099" name="Default" comment="">
-      <change type="DELETED" beforePath="F:\dev\FuAdmin\application\logs\log-2014-10-02.php" afterPath="" />
-      <change type="DELETED" beforePath="F:\dev\FuAdmin\application\logs\log-2014-10-06.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/config.php" afterPath="$PROJECT_DIR$/application/config/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Tools.php" afterPath="$PROJECT_DIR$/application/controllers/Tools.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FuAdmin.iws" />
@@ -28,46 +28,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.php">
+      <file leaf-file-name="iAclRole.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/acl/iAclRole.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="219" column="41" selection-start="7499" selection-end="7499" vertical-scroll-proportion="0.0" vertical-offset="3723" max-vertical-offset="4862">
+            <state line="15" column="2" selection-start="163" selection-end="163" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnableDebug.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cli/EnableDebug.sh">
+      <file leaf-file-name="iAclResource.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/acl/iAclResource.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="32" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="119">
+            <state line="14" column="28" selection-start="196" selection-end="196" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="272">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="doctrine" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/bin/doctrine">
+      <file leaf-file-name="roleType.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Entity/roleType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+            <state line="26" column="8" selection-start="423" selection-end="423" vertical-scroll-proportion="-12.461538" vertical-offset="118" max-vertical-offset="1190">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/config.php">
+      <file leaf-file-name="user.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Entity/user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="289" column="65" selection-start="9874" selection-end="9874" vertical-scroll-proportion="26.807692" vertical-offset="5610" max-vertical-offset="8075">
+            <state line="54" column="1" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log-2014-10-08.txt" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/logs/log-2014-10-08.txt">
+      <file leaf-file-name="role.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Entity/role.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="54" selection-start="919" selection-end="919" vertical-scroll-proportion="0.2505263" vertical-offset="0" max-vertical-offset="950">
+            <state line="31" column="18" selection-start="457" selection-end="457" vertical-scroll-proportion="-15.038462" vertical-offset="136" max-vertical-offset="1003">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="34" selection-start="399" selection-end="399" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="408">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="acl.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/acl/acl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="2" selection-start="1360" selection-end="1360" vertical-scroll-proportion="-27.23077" vertical-offset="159" max-vertical-offset="969">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Doctrine.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/Doctrine.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="8.653846" vertical-offset="225" max-vertical-offset="969">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tools.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Tools.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="18" selection-start="1246" selection-end="1246" vertical-scroll-proportion="-21.423077" vertical-offset="259" max-vertical-offset="1156">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="staticResource.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/libraries/acl/staticResource.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="29" selection-start="773" selection-end="773" vertical-scroll-proportion="0.6344086" vertical-offset="327" max-vertical-offset="1173">
               <folding />
             </state>
           </provider>
@@ -88,6 +133,22 @@
       <list>
         <option value="$PROJECT_DIR$/cli/enabledebug" />
         <option value="$PROJECT_DIR$/application/config/config.php" />
+        <option value="$PROJECT_DIR$/public/.htaccess" />
+        <option value="$PROJECT_DIR$/application/models/FunctionType.php" />
+        <option value="$PROJECT_DIR$/application/models/Entity/Function.php" />
+        <option value="$PROJECT_DIR$/application/libraries/acl/Acl.php" />
+        <option value="$PROJECT_DIR$/application/libraries/acl/AclResource.php" />
+        <option value="$PROJECT_DIR$/application/libraries/acl/iAclRole.php" />
+        <option value="$PROJECT_DIR$/application/models/Entity/Role.php" />
+        <option value="$PROJECT_DIR$/application/models/Entity/RoleType.php" />
+        <option value="$PROJECT_DIR$/application/models/Entity/roleType.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/application/models/Entity/role.php" />
+        <option value="$PROJECT_DIR$/application/libraries/acl/aclResource.php" />
+        <option value="$PROJECT_DIR$/application/libraries/acl/staticResource.php" />
+        <option value="$PROJECT_DIR$/application/libraries/acl/iAclResource.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Tools.php" />
+        <option value="$PROJECT_DIR$/application/libraries/acl/acl.php" />
       </list>
     </option>
   </component>
@@ -109,9 +170,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="22" />
-    <option name="width" value="1696" />
-    <option name="height" value="1036" />
+    <option name="y" value="16" />
+    <option name="width" value="1552" />
+    <option name="height" value="856" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -168,52 +229,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FuAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FuAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FuAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FuAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cli" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FuAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FuAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -232,7 +247,69 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FuAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FuAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FuAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FuAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FuAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FuAdmin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,15 +321,26 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="options.lastSelected" value="Configurable.PHP.PHPUnit" />
+    <property name="options.lastSelected" value="editor" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="FullScreen" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\dev\FuAdmin\application\models\Entity" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\dev\FuAdmin\application\models\Entity" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server">
       <method />
     </configuration>
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
@@ -266,16 +354,13 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server">
-      <method />
-    </configuration>
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="vb3" session_id="PS">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="vb3" session_id="PS">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -321,7 +406,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="1696" height="1036" extended-state="6" />
+    <frame x="-8" y="16" width="1552" height="856" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -330,7 +415,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2734375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39959016" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -338,11 +423,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -360,83 +445,139 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/index.php">
+    <entry file="file://$PROJECT_DIR$/application/libraries/acl/iAclRole.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="41" selection-start="7499" selection-end="7499" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4862">
+        <state line="11" column="10" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="323">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cli/EnableDebug.sh">
+    <entry file="file://$PROJECT_DIR$/application/libraries/acl/iAclResource.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="32" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="119">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/bin/doctrine">
+    <entry file="file://$PROJECT_DIR$/application/models/Entity/roleType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="221">
+        <state line="16" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="408">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
+    <entry file="file://$PROJECT_DIR$/application/models/Entity/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="41" selection-start="7499" selection-end="7499" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4862">
+        <state line="54" column="1" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cli/EnableDebug.sh">
+    <entry file="file://$PROJECT_DIR$/application/models/Entity/role.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="32" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="119">
+        <state line="18" column="1" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="408">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/bin/doctrine">
+    <entry file="file://$PROJECT_DIR$/application/libraries/acl/acl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="27" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="221">
+        <state line="21" column="0" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="561">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Tools.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="41" selection-start="7499" selection-end="7499" vertical-scroll-proportion="0.0" vertical-offset="3723" max-vertical-offset="4862">
+        <state line="33" column="27" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="833">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cli/EnableDebug.sh">
+    <entry file="file://$PROJECT_DIR$/application/libraries/acl/staticResource.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="32" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+        <state line="13" column="2" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="323">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/bin/doctrine">
+    <entry file="file://$PROJECT_DIR$/application/models/Entity/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+        <state line="54" column="1" selection-start="820" selection-end="820" vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/config.php">
+    <entry file="file://$PROJECT_DIR$/application/libraries/acl/iAclRole.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="289" column="65" selection-start="9874" selection-end="9874" vertical-scroll-proportion="26.807692" vertical-offset="5610" max-vertical-offset="8075">
+        <state line="15" column="2" selection-start="163" selection-end="163" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/logs/log-2014-10-08.txt">
+    <entry file="file://$PROJECT_DIR$/application/libraries/Twig.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="54" selection-start="919" selection-end="919" vertical-scroll-proportion="0.2505263" vertical-offset="0" max-vertical-offset="950">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/Doctrine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="8.653846" vertical-offset="225" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="34" selection-start="399" selection-end="399" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Entity/roleType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="8" selection-start="423" selection-end="423" vertical-scroll-proportion="-12.461538" vertical-offset="118" max-vertical-offset="1190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Entity/role.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="18" selection-start="457" selection-end="457" vertical-scroll-proportion="-15.038462" vertical-offset="136" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/acl/iAclResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="28" selection-start="196" selection-end="196" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Tools.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="18" selection-start="1246" selection-end="1246" vertical-scroll-proportion="-21.423077" vertical-offset="259" max-vertical-offset="1156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/acl/acl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="2" selection-start="1360" selection-end="1360" vertical-scroll-proportion="-27.23077" vertical-offset="159" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/acl/staticResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="29" selection-start="773" selection-end="773" vertical-scroll-proportion="0.6344086" vertical-offset="327" max-vertical-offset="1173">
           <folding />
         </state>
       </provider>

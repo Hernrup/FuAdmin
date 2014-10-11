@@ -9,6 +9,10 @@
     	"symfony/yaml": "*"
     },
     "autoload": { 
-        "classmap": [ "application/models", "application/services"] 
+        "classmap": [
+            "application/models",
+            "application/services",
+            "application/libraries"
+        ]
     }
 }
