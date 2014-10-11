@@ -8,5 +8,7 @@
     	"twig/twig": "1.9.1",
     	"symfony/yaml": "*"
     },
-    "autoload": { "classmap": [ "application/models"] }
+    "autoload": { 
+        "classmap": [ "application/models", "application/services"] 
+    }
 }

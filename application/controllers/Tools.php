@@ -2,33 +2,29 @@
 
 class Tools extends CI_Controller {
 
-	public function test()
-	{
+	public function test(){
+            $em = $this->doctrine->em;
 
-		$em = $this->doctrine->em;
+            $user = new User();
+            $user->setName('A name');
+            $user->setEmail('m@h.se');
 
-		$user = new User();
-		$user->setName('A name');
-		$em->persist($user);
-		$em->flush();
+            try {
+                //save to database
+                $em->persist($user);
+                $em->flush();
+            }
+            catch(Exception $err){
+                die($err->getMessage());
+            }
 
-		try {
-            //save to database
-            $em->persist($user);
-			$em->flush();
-        }
-        catch(Exception $err){
-             
-            die($err->getMessage());
-        }
+            echo "Created User with ID " . $user->getId() . "\n";
 
-		echo "Created User with ID " . $user->getId() . "\n";
+            $users = $em->getRepository('User')->findAll();
 
-		$users = $em->getRepository('User')->findAll();
-
-		foreach ($users as $u) {
-		    echo sprintf("%s-%s\n",$u->getId(), $u->getName());
-		}
+            foreach ($users as $u) {
+                echo sprintf("%s-%s\n",$u->getId(), $u->getName());
+            }
 	}
 
 	public function phpinfo()

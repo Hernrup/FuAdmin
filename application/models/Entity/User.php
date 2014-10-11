@@ -19,13 +19,24 @@ class User
      * @var string
      * @Column(type="string", nullable=false)
      */
-    protected $name;
+    protected $givenname;
+    
+    /**
+     *
+     * @var string
+     * @Column (type="string", nullable=false)
+     */
+    protected $lastname;
 
    /**
      * @var string
      * @Column(type="string", nullable=false)
      */
     protected $email;
+    
+    public function setEmail($email) {
+        $this->email = $email;
+    }
 
     public function getId()
     {
