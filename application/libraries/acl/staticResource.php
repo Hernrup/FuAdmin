@@ -15,9 +15,19 @@ namespace acl;
  */
 class StaticResource implements iAclResource {
 
+    /**
+     * @var array
+     */
     protected $allowedActions;
+
+    /**
+     * @var string
+     */
     protected $name;
 
+    /**
+     *
+     */
     function __construct()
     {
         $this->allowedActions = [];
@@ -57,8 +67,8 @@ class StaticResource implements iAclResource {
      * @param array $actions
      * @return $this
      */
-    public function allow(array $actions){
-        array_push($this->allowedActions,$actions);
+    public function allow($actions){
+        array_push($this->allowedActions, $actions);
         return $this;
     }
 

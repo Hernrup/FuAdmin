@@ -11,6 +11,14 @@ namespace acl;
 
 interface iAclResource {
 
+    /**
+     * @param $action
+     * @return mixed
+     */
     public function isAllowed($action);
+
+    /**
+     * @return mixed
+     */
     public function getName();
 } 

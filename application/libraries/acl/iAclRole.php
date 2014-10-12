@@ -11,6 +11,9 @@ namespace acl;
 
 interface iAclRole {
 
+    /**
+     * @return mixed
+     */
     public function getAclRoleId();
 
 } 

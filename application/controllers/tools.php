@@ -49,6 +49,8 @@ class Tools extends CI_Controller {
         echo "\n";
         echo $acl->isAllowed($roles,$resource,"test") ? 'y':'n';
         echo "\n";
+        echo $acl->isAllowed($roles,new stdClass(),"test") ? 'y':'n';
+        echo "\n";
 
 
     }
