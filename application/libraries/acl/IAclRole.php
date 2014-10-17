@@ -9,7 +9,7 @@
 namespace acl;
 
 
-interface iAclRole {
+interface IAclRole {
 
     /**
      * @return mixed

@@ -9,13 +9,14 @@
 namespace acl;
 
 
-interface iAclResource {
+interface IAclResource {
 
     /**
-     * @param $action
+     * @param array $roleCollection
+     * @param string $action
      * @return mixed
      */
-    public function isAllowed($action);
+    public function isAllowed(Array $roleCollection, $action);
 
     /**
      * @return mixed

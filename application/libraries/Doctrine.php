@@ -18,7 +18,8 @@ class Doctrine
         require APPPATH . 'config/database.php';
 
         $this->connection_options = array(
-            'driver'        => $db['default']['dbdriver'],
+            //'driver'        => $db['default']['dbdriver'],
+            'driver'        => 'pdo_mysql',
             'user'          => $db['default']['username'],
             'password'      => $db['default']['password'],
             'host'          => $db['default']['hostname'],
