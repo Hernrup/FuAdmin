@@ -59,7 +59,7 @@ class Unit
     protected $cellphone;   
     
     function __construct() {
-        //$this->children = new ArrayCollection(); ????
+        $this->children = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     public function getId() {
@@ -70,8 +70,8 @@ class Unit
         return $this->children;
     }
 
-    public function setChildren(Unit $children) {
-       $this->children[] = $child;
+    public function addChild(Unit $child) {
+       $this->children.add($child);
        $child->setParent($this);
     }
 

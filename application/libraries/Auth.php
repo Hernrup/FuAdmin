@@ -16,16 +16,13 @@ class Auth {
         
         $login_user = $CI->doctrine->em->getRepository('User')->findOneBy(array('identificationNr' => $username, 'password' => sha1($password)));
         
-       // if($login_user != NULL and $login_user->password == sha1($password)){
         if($login_user != NULL){
-            $CI->session->set_userdata('isAuthorized', TRUE);
-            $CI->session->set_userdata($login_user);
+            $CI->session->set_userdata(array('isAuthorized' => TRUE, 'activeUser' => $login_user));
             return TRUE;
         } else {
             return FALSE;
         }  
-        
-    
+
     }
     
 }

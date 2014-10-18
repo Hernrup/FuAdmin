@@ -1,19 +1,17 @@
 <?php
-class Start extends FU_Controller{
+class Start extends CI_Controller{
     
     public function index(){
         $data = new stdClass();
         $data->username = 'dunken';
         
         // some testing thins
-        $this->load->model('entity/unittype');
-        $this->load->model('entity/unit');
                  
-        $parent = $this->doctrine->em->find('Unit', 4);
-        $unitType = $this->doctrine->em->find('unitType', 2);
+        $parent = $this->doctrine->em->find('Unit', 1);
+        $unitType = $this->doctrine->em->find('unitType', 3);
         
         $unit = new Unit();
-        $unit->setName('Malmö');
+        $unit->setName('Trelleborg');
         $unit->setParent($parent);
         $unit->setUnitType($unitType);
         

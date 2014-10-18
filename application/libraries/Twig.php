@@ -15,6 +15,7 @@ class Twig
 	{
 		$this->CI =& get_instance();
 		$this->CI->config->load('twig');
+                
 				
 		log_message('debug', "Twig Autoloader Loaded");
 
@@ -52,8 +53,8 @@ class Twig
         		}
     	}
 
-	  	// add session on twig template
-        // $this->_twig->addGlobal("session", $this->CI->session);
+            // add session on twig template
+            $this->_twig->addGlobal("session", $this->CI->session);
 	}
 
 	public function add_function($name) 

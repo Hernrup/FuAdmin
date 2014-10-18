@@ -202,12 +202,12 @@ class Unit extends \Unit implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setChildren(\Unit $children)
+    public function addChild(\Unit $child)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setChildren', array($children));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addChild', array($child));
 
-        return parent::setChildren($children);
+        return parent::addChild($child);
     }
 
     /**

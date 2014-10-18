@@ -12,7 +12,7 @@ class Login extends FU_Controller{
         //Set rules
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         $this->form_validation->set_rules('username', 'Personnummer', 'required');
-        $this->form_validation->set_rules('password', 'Lösenord', 'required|callback_check_login');
+        $this->form_validation->set_rules('password', 'Lösenord', 'required|callback__check_login');
         $this->form_validation->set_message('required', 'Fältet %s är obligatostiskt');
         
         if ($this->form_validation->run() == FALSE)
@@ -27,7 +27,12 @@ class Login extends FU_Controller{
         }
     }
     
-    public function check_login(){
+    public function logout(){
+        $this->session->sess_destroy();
+        redirect(base_url(), 'refresh');
+    }
+
+        public function _check_login(){
         //get post data
         $username = $this->input->post('username');
         $password = $this->input->post('password');
