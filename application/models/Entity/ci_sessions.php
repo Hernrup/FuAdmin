@@ -16,9 +16,9 @@ class Ci_sessions {
     /**
      *
      * @var string
-     * @Column (type="string", length=45, nullable=false, options={"default":0})
+     * @Column (name="ip_address",type="string", length=45, nullable=false, options={"default":0})
      */
-    protected $ip_adress;
+    protected $ip_address;
     
     /**
      *

@@ -6,8 +6,8 @@
  * Time: 19:24
  */
 
-namespace acl;
 
+namespace acl;
 
 class Acl {
 
