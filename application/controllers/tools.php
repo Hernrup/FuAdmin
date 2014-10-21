@@ -1,5 +1,5 @@
 <?php
-use models\User;
+use Entities\User;
 
 class Tools extends CI_Controller {
 
