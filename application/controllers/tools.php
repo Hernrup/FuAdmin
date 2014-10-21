@@ -1,4 +1,5 @@
 <?php
+use models\User;
 
 class Tools extends CI_Controller {
 
@@ -6,7 +7,7 @@ class Tools extends CI_Controller {
             $em = $this->doctrine->em;
 
             $user = new User();
-            $user->setName('A name');
+            $user->setGivenname('A name');
             $user->setEmail('m@h.se');
 
             try {
