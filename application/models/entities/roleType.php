@@ -1,11 +1,14 @@
 <?php
+
+namespace Entities;
+
 /**
  *
  *
  * @RoleType(name="roletype")
  * @Entity
  */
-class RoleType
+class RoleType extends CoreEntity
 {
     /**
      * @var int

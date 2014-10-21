@@ -1,4 +1,6 @@
 <?php
+namespace Entities;
+
 use acl\IAclRole;
 /**
  * 
@@ -6,7 +8,7 @@ use acl\IAclRole;
  * @Role(name="role")
  * @Entity
  */
-class Role implements iAclRole
+class Role extends CoreEntity implements iAclRole
 {
     /**
      * @var int
@@ -20,6 +22,11 @@ class Role implements iAclRole
      * @ManyToOne(targetEntity="RoleType", inversedBy="roles")
      **/
     protected $roleType;
+
+    /**
+     * @ManyToOne(targetEntity="User", inversedBy="roles")
+     **/
+    protected $user;
 
     /**
      * @param int $id

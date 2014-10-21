@@ -1,6 +1,6 @@
 <?php
 
-namespace model\entity;
+namespace Entities;
 
 class CoreEntity{
     public function __construct(){

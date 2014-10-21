@@ -1,4 +1,7 @@
 <?php
+
+namespace Entities;
+
 /**
  * 
  *
@@ -6,7 +9,7 @@
  * @Entity
  * 
  */
-class Unit
+class Unit extends CoreEntity
 {
     /**
      * @var int

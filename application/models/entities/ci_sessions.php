@@ -1,10 +1,13 @@
 <?php
+
+namespace Entities;
+
 /**
  * @Ci_session (name="ci_session", indexes={@Index(name="last_activity_idx", columns={"last_activity"})})
  * @Entity
  * 
  */
-class Ci_sessions {
+class Ci_sessions extends CoreEntity{
     /**
      *
      * @var string 

@@ -32,13 +32,14 @@ class Doctrine
             ),
         );
 
-        $models_namespace = 'Entity';
-        $models_path = APPPATH . 'models';
+        $models_namespace = 'Entities';
+//        $models_path = APPPATH . 'models';
         $proxies_dir = APPPATH . 'models/Proxies';
-        $metadata_paths = array(APPPATH . 'models');
+        $metadata_paths = array(APPPATH . 'models/entities');
 
         // Set $dev_mode to TRUE to disable caching while you develop
         $this->config = Setup::createAnnotationMetadataConfiguration($metadata_paths, $dev_mode = true, $proxies_dir);
+        $this->config->setEntityNamespaces(array($models_namespace));
         $this->em = EntityManager::create($this->connection_options, $this->config);
     }
 
