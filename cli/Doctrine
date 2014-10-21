@@ -1,12 +1,6 @@
 <?php
-define('APPPATH', dirname(__FILE__) . '/../application/');
-define('BASEPATH', APPPATH . '/../vendor/ellislab/codeigniter/system');
-define('ENVIRONMENT', 'development');
 
-chdir(APPPATH);
-
-require __DIR__ . '/../application/libraries/Doctrine.php';
-require __DIR__."/../vendor/autoload.php";
+require dirname(__FILE__) . '/../cli/DoctrineCli/Core.php';
 
 use Symfony\Component\Console\Application;
 

@@ -1,11 +1,12 @@
 <?php
+use acl\IAclRole;
 /**
  * 
  *
  * @Role(name="role")
  * @Entity
  */
-class Role implements acl\iAclRole
+class Role implements iAclRole
 {
     /**
      * @var int
