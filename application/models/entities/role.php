@@ -29,6 +29,11 @@ class Role extends CoreEntity implements iAclRole
     protected $user;
 
     /**
+     * @ManyToOne(targetEntity="Unit", inversedBy="roles")
+     **/
+    protected $unit;
+
+    /**
      * @param int $id
      */
     public function setId($id)
@@ -55,6 +60,38 @@ class Role extends CoreEntity implements iAclRole
     public function setRoleType($roleType)
     {
         $this->roleType = $roleType;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $unit
+     */
+    public function setUnit($unit)
+    {
+        $this->unit = $unit;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUnit()
+    {
+        return $this->unit;
     }
 
 

@@ -59,7 +59,13 @@ class Unit extends CoreEntity
      * @var string
      * @Column (type="string", nullable=true)
      */
-    protected $cellphone;   
+    protected $cellphone;
+
+    /**
+     * @OneToMany(targetEntity="Role", mappedBy="unit")
+     * @var Roles[]
+     **/
+    protected $roles = null;
     
     function __construct() {
         $this->children = new \Doctrine\Common\Collections\ArrayCollection();

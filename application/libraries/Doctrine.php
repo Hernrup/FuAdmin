@@ -43,6 +43,7 @@ class Doctrine
         $this->em = EntityManager::create($this->connection_options, $this->config);
     }
 
+
     public function truncateTable($className){
         $cmd = $this->em->getClassMetadata($className);
         $connection = $this->em->getConnection();
