@@ -1,0 +1,10 @@
+{% for unit in units %}
+    <li>
+        <a href="{{ unit.id }}">{{ unit.name }}</a>
+        {% if unit.children %}
+            <ul>
+                {% include "192.168.1.17/assets/administration/unitParents.twig" with {'units': unit.children} %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}

@@ -56,8 +56,16 @@ class Unit
      * @var string
      * @Column (type="string", nullable=true)
      */
-    protected $cellphone;   
+    protected $cellphone;
     
+    
+    /**
+     *
+     * @ManyToOne(targetEntity="UnitOrganisation", inversedBy="organisations")
+     */
+    protected $organisationType;
+
+
     function __construct() {
         $this->children = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -122,6 +130,18 @@ class Unit
     public function setCellphone($cellphone) {
         $this->cellphone = $cellphone;
     }
+
+    public function getOrganisationType() {
+        return $this->organisationType;
+    }
+
+    public function setOrganisationType($organisationType) {
+        $this->organisationType = $organisationType;
+    }
+
+
+
+
 
 
 }

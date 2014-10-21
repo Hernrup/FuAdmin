@@ -1,0 +1,20 @@
+{% extends "templates/layout.twig" %}
+
+{% block mainContent %}
+
+
+<div class="row-fluid">
+  <div class="span6">
+    <h2>Administration</h2>
+    <ul class="nav nav-pills nav-stacked">
+        <li><a href="{{base_url}}administration/unitCreate">Skapa enhet</a></li>
+    </ul>
+  </div><!--/span-->
+  
+  <div class="span6">
+    <h2>Hjälp</h2>
+    <p>Detta är administrationsmenyn. Den är inte specifik för ett förbund, förening eller avdelning utan syftar till att vara en administrationssida för hela systemet. Tänk därför på att det som du ändrar här kommer påverka alla andra.</p>
+  </div><!--/span-->
+</div><!--/row-->
+          
+{% endblock %}

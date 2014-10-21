@@ -1,5 +1,5 @@
 <?php
-class Login extends FU_Controller{
+class Login extends CI_Controller{
 
     public function index(){
         $data = new stdClass();
@@ -37,8 +37,6 @@ class Login extends FU_Controller{
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         
-        //load own library
-        $this->load->library('auth');
         $this->form_validation->set_message('check_login', 'Ditt användarnamn eller lösenord är fel!');
         
         //if true login sets session and data

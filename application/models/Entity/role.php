@@ -5,7 +5,7 @@
  * @Role(name="role")
  * @Entity
  */
-class Role implements acl\iAclRole
+class Role implements acl\IAclRole
 {
     /**
      * @var int

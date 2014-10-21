@@ -2,10 +2,10 @@
 /**
  *
  *
- * @RoleType(name="UnitType")
+ * @RoleType(name="unitorganisation")
  * @Entity
  */
-class UnitType
+class UnitOrganisation
 {
     /**
      * @var int
@@ -22,10 +22,10 @@ class UnitType
     protected $name;
 
     /**
-     * @OneToMany(targetEntity="Unit", mappedBy="unitType")
-     * @var Units[]
+     * @OneToMany(targetEntity="unit", mappedBy="organisationType")
+     * @var organisations[]
      **/
-    protected $units = null;
+    protected $organisations = null;
 
     public function getId() {
         return $this->id;
@@ -39,12 +39,12 @@ class UnitType
         $this->name = $name;
     }
 
-    public function getUnits() {
-        return $this->units;
+    public function getOrganisations() {
+        return $this->organisations;
     }
 
-    public function setUnits($units) {
-        $this->units = $units;
+    public function setOrganisations($organisations) {
+        $this->organisations = $organisations;
     }
 
 

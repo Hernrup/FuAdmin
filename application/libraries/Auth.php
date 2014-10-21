@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 class Auth {
 
-    /**
+        /**
      * 
      * @param varchar $identificationNr svenskt personnummer
      * @param varchar $password lösenord
@@ -22,7 +22,16 @@ class Auth {
         } else {
             return FALSE;
         }  
-
+    }
+    
+    public function isAuthorized(){
+        //ladda resurser
+        $CI =& get_instance();
+        $CI->load->database();
+        
+        if($CI->session->userdata('isAuthorized') == TRUE)
+            {return true;}
+        else{return false;}
     }
     
 }

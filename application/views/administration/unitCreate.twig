@@ -1,0 +1,60 @@
+{% extends "templates/layout.twig" %}
+
+{% block mainContent %}
+
+<div class="row-fluid">
+  <div class="span6">
+    <h2>Skapa enhet</h2>
+   <form class="form-signin" method="post" action="{{ base_url }}administration/unitCreate">
+    {{ validation_errors | raw }}
+           
+    <label for="unitName">Basinformation</label>
+    <input name="unitName"  type="text"     class="input-block-level"   placeholder="Enhetsnamn (Obligatoriskt)"    id="unitName">
+    <input name="email"     type="email"    class="input-block-level"   placeholder="E-post">
+    <input name="phone"     type="tel"      class="input-block-level"   placeholder="Telefonnummer">
+    <input name="identificationnr" type="text" class="input-block-level" placeholder="Organisationsnummer">
+    
+    <label for="unitType">Enhetstyp</label>
+    <select class="input-block-level" id="unitType" name="unitType">
+        {% for type in unitTypes %}
+            <option value="{{ type.id }}">{{ type.name|capitalize  }}</option>
+        {% endfor %}
+    </select>
+    
+    <label for="organisation">Frivilligorganisation</label>
+    <select class="input-block-level" id="orgType" name="orgType">
+        {% for org in unitOrgs %}
+            <option value="{{ org.id }}">{{ org.name|capitalize  }}</option>
+        {% endfor %}
+    </select>
+    
+    <label for="parent">Förälder</label>
+    <select class="input-block-level" id="parent" name="parent">
+        {% for unit in units %}
+            <option value="{{ unit.id }}">{{ unit.name|capitalize  }}</option>
+        {% endfor %}
+    </select>
+    <button class="btn btn-large btn-primary" type="submit">Skapa</button>
+    </form>
+    
+  </div><!--/span-->
+  
+  <div class="span6">
+    <h2>Typer av enheter</h2>
+    <ul>
+        <li>Förbund</li>
+        <li>Förening</li>
+        <li>Vuxenavdelning</li>
+        <li>Ungdomsavdelning</li>
+    </ul>
+    
+    <h2>Tillhörighet</h2>
+    <p>Tänk på att klicka ur rutan för tillhörighet om din enhet inte tillhör Försvarsutbildarna. Välj därefter vilken organisation din nehtet tillhör.</p>
+    <p>Du väljer "förälder" precis som vanligt.</p>
+  </div><!--/span-->
+</div><!--/row-->
+
+
+
+
+{% endblock %}

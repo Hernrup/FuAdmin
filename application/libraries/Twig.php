@@ -53,8 +53,9 @@ class Twig
         		}
     	}
 
-            // add session on twig template
+            // add globals on twig template
             $this->_twig->addGlobal("session", $this->CI->session);
+            $this->_twig->addGlobal("base_url", base_url());
 	}
 
 	public function add_function($name) 

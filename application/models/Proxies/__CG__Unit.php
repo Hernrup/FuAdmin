@@ -64,10 +64,10 @@ class Unit extends \Unit implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'children', '' . "\0" . 'Unit' . "\0" . 'parent', 'unitType', 'name', 'email', 'identificationNr', 'cellphone');
+            return array('__isInitialized__', 'id', 'children', '' . "\0" . 'Unit' . "\0" . 'parent', 'unitType', 'name', 'email', 'identificationNr', 'cellphone', 'organisationType');
         }
 
-        return array('__isInitialized__', 'id', 'children', '' . "\0" . 'Unit' . "\0" . 'parent', 'unitType', 'name', 'email', 'identificationNr', 'cellphone');
+        return array('__isInitialized__', 'id', 'children', '' . "\0" . 'Unit' . "\0" . 'parent', 'unitType', 'name', 'email', 'identificationNr', 'cellphone', 'organisationType');
     }
 
     /**
@@ -340,6 +340,28 @@ class Unit extends \Unit implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCellphone', array($cellphone));
 
         return parent::setCellphone($cellphone);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getOrganisationType()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getOrganisationType', array());
+
+        return parent::getOrganisationType();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setOrganisationType($organisationType)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setOrganisationType', array($organisationType));
+
+        return parent::setOrganisationType($organisationType);
     }
 
 }
