@@ -3,3 +3,4 @@
 /application/logs/*
 /nbproject/private/
 .idea
+composer.lock
