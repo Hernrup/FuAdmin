@@ -20,6 +20,9 @@ class Administration extends FU_Controller{
         $em = $this->doctrine->em;
         $data = new stdClass();
         
+        //data to twig
+        $data->treeLink = base_url('assets/administration/unitParents.twig');
+        
         //load CI Resurces
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -28,7 +31,7 @@ class Administration extends FU_Controller{
         //Get some data
         $data->unitTypes = $em->getRepository('UnitType')->findAll();
         $data->unitOrgs = $em->getRepository('UnitOrganisation')->findAll();
-        $data->units = $em->getRepository('Unit')->findAll();        
+        $data->units = $em->getRepository('Unit')->findBy(array(), array('parent' => 'asc'), 1);        
         
         //Set rules
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
@@ -63,6 +66,7 @@ class Administration extends FU_Controller{
             redirect(base_url('unit/'.$unitId), 'refresh');
         }
     }
+    
 
 }
 

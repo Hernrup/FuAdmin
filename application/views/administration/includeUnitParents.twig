@@ -1,0 +1,10 @@
+{% for unit in units %}
+    <li>
+        <span>{{ unit.name}} - {{ unit.id }}</span>
+        {% if unit.children %}
+            <ul>
+                {% include 'administration/includeUnitParents.twig' with {'units': unit.children} only%}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}

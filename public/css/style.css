@@ -1,3 +1,14 @@
 #FU_moveContainer{
     margin-top: 50px;
 }
+
+/** Administration **/
+
+#FU_administrationTree ul{
+    list-style-type: none;
+}
+
+#FU_administrationTree span {
+    display: block;
+    padding:1em 0 0 0;
+}

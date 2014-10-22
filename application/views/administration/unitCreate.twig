@@ -29,15 +29,16 @@
     </select>
     
     <label for="parent">Förälder</label>
-    <select class="input-block-level" id="parent" name="parent">
-        {% for unit in units %}
-            <option value="{{ unit.id }}">{{ unit.name|capitalize  }}</option>
-        {% endfor %}
-    </select>
-    <button class="btn btn-large btn-primary" type="submit">Skapa</button>
-    </form>
+    <input name="parent" id="parent" type="text" class="input-block-level" placeholder="Förälderns ID">
     
+    <button class="btn btn-large btn-primary" type="submit">Skapa</button>
+    </form>   
+
+    <ul id="FU_administrationTree">
+        {% include 'administration/includeUnitParents.twig' with {'units':units} only %}
+    </ul>
   </div><!--/span-->
+  
   
   <div class="span6">
     <h2>Typer av enheter</h2>
@@ -53,7 +54,6 @@
     <p>Du väljer "förälder" precis som vanligt.</p>
   </div><!--/span-->
 </div><!--/row-->
-
 
 
 
