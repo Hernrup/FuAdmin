@@ -2,37 +2,37 @@
 class Login extends FU_Controller{
 
     public function index(){
-        $data = new stdClass();
-        $data->base_url = base_url();
+        // $data = new stdClass();
+        // $data->base_url = base_url();
         
-        //load CI Resurces
-        $this->load->helper('form');
-        $this->load->library('form_validation');
+        // //load CI Resurces
+        // $this->load->helper('form');
+        // $this->load->library('form_validation');
         
-        //Set rules
-        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-        $this->form_validation->set_rules('username', 'Personnummer', 'required');
-        $this->form_validation->set_rules('password', 'Lösenord', 'required|callback__check_login');
-        $this->form_validation->set_message('required', 'Fältet %s är obligatostiskt');
+        // //Set rules
+        // $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        // $this->form_validation->set_rules('username', 'Personnummer', 'required');
+        // $this->form_validation->set_rules('password', 'Lösenord', 'required|callback__check_login');
+        // $this->form_validation->set_message('required', 'Fältet %s är obligatostiskt');
         
-        if ($this->form_validation->run() == FALSE)
-        {
-            //load validation errors to twig
-            $data->validation_errors = validation_errors();
-            $this->twig->displayRoute($data);
-        }
-        else
-        {
-             redirect('start', 'refresh');
-        }
+        // if ($this->form_validation->run() == FALSE)
+        // {
+        //     //load validation errors to twig
+        //     $data->validation_errors = validation_errors();
+        //     $this->twig->displayRoute($data);
+        // }
+        // else
+        // {
+        //      redirect('start', 'refresh');
+        // }
     }
     
     public function logout(){
         $this->session->sess_destroy();
-        redirect(base_url(), 'refresh');
+        // redirect(base_url(), 'refresh');
     }
 
-        public function _check_login(){
+    public function _check_login(){
         //get post data
         $username = $this->input->post('username');
         $password = $this->input->post('password');
