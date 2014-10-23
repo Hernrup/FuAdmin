@@ -1,5 +1,5 @@
 <?php
-class Login extends FU_Controller{
+class Login extends CI_Controller{
 
     public function index(){
         $data = new stdClass();

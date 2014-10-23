@@ -1,4 +1,8 @@
 <?php
+
+namespace Entities;
+
+
 /**
  *
  *
@@ -22,7 +26,7 @@ class UnitOrganisation
     protected $name;
 
     /**
-     * @OneToMany(targetEntity="unit", mappedBy="organisationType")
+     * @OneToMany(targetEntity="Unit", mappedBy="organisationType")
      * @var organisations[]
      **/
     protected $organisations = null;
