@@ -32,22 +32,26 @@ class Doctrine
             ),
         );
 
-        // With this configuration, your model files need to be in application/models/Entity
-        // e.g. Creating a new Entity\User loads the class from application/models/Entity/User.php
-        $models_namespace = 'Entity';
-        $models_path = APPPATH . 'models';
+        $models_namespace = 'Entities';
+//        $models_path = APPPATH . 'models';
         $proxies_dir = APPPATH . 'models/Proxies';
-        $metadata_paths = array(APPPATH . 'models');
+        $metadata_paths = array(APPPATH . 'models/entities');
 
         // Set $dev_mode to TRUE to disable caching while you develop
-
         $this->config = Setup::createAnnotationMetadataConfiguration($metadata_paths, $dev_mode = true, $proxies_dir);
+        $this->config->setEntityNamespaces(array($models_namespace));
         $this->em = EntityManager::create($this->connection_options, $this->config);
+    }
 
-        // $loader = new ClassLoader($models_namespace, $models_path);
-        // $loader->register();
-        // $classLoader = new ClassLoader('Doctrine\DBAL\Migrations', APPPATH.'/libraries/Doctrine/DBAL/Migrations');
-        // $classLoader->register();
-        // $classLoader->register();
+
+    public function truncateTable($className){
+        $cmd = $this->em->getClassMetadata($className);
+        $connection = $this->em->getConnection();
+        $dbPlatform = $connection->getDatabasePlatform();
+        $connection->query('SET FOREIGN_KEY_CHECKS=0');
+        $q = $dbPlatform->getTruncateTableSql($cmd->getTableName());
+        $connection->executeUpdate($q);
+        $connection->query('SET FOREIGN_KEY_CHECKS=1');
+        log_message("INFO",sprintf("Table %s has been truncated",$className));
     }
 }

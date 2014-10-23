@@ -1,4 +1,7 @@
 <?php
+
+namespace Entities;
+
 /**
  * 
  *
@@ -6,7 +9,7 @@
  * @Entity
  * 
  */
-class Unit
+class Unit extends CoreEntity
 {
     /**
      * @var int
@@ -57,15 +60,13 @@ class Unit
      * @Column (type="string", nullable=true)
      */
     protected $cellphone;
-    
-    
+
     /**
-     *
-     * @ManyToOne(targetEntity="UnitOrganisation", inversedBy="organisations")
-     */
-    protected $organisationType;
-
-
+     * @OneToMany(targetEntity="Role", mappedBy="unit")
+     * @var Roles[]
+     **/
+    protected $roles = null;
+    
     function __construct() {
         $this->children = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -130,18 +131,6 @@ class Unit
     public function setCellphone($cellphone) {
         $this->cellphone = $cellphone;
     }
-
-    public function getOrganisationType() {
-        return $this->organisationType;
-    }
-
-    public function setOrganisationType($organisationType) {
-        $this->organisationType = $organisationType;
-    }
-
-
-
-
 
 
 }

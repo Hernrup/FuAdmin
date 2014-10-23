@@ -1,4 +1,7 @@
 <?php
+
+namespace Entities;
+
 /**
  * 
  *
@@ -6,7 +9,7 @@
  * @Entity
  * 
  */
-class User
+class User extends CoreEntity
 {
     /**
      * @var int
@@ -56,6 +59,12 @@ class User
      * @Column (type="string")
      */
     protected $cellphone;
+
+    /**
+     * @OneToMany(targetEntity="Role", mappedBy="user")
+     * @var Roles[]
+     **/
+    protected $roles = null;
     
     public function getId() {
         return $this->id;
