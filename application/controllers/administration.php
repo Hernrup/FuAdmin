@@ -29,9 +29,9 @@ class Administration extends FU_Controller{
         
         
         //Get some data
-        $data->unitTypes = $em->getRepository('UnitType')->findAll();
-        $data->unitOrgs = $em->getRepository('UnitOrganisation')->findAll();
-        $data->units = $em->getRepository('Unit')->findBy(array(), array('parent' => 'asc'), 1);        
+        $data->unitTypes = $em->getRepository('Entities\UnitType')->findAll();
+        $data->unitOrgs = $em->getRepository('Entities\UnitOrganisation')->findAll();
+        $data->units = $em->getRepository('Entities\Unit')->findBy(array(), array('parent' => 'asc'), 1);        
         
         //Set rules
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
@@ -46,9 +46,9 @@ class Administration extends FU_Controller{
         }
         else
         {
-            $unitType = $em->find('UnitType', $this->input->post('unitType'));
-            $orgType = $em->find('UnitOrganisation', $this->input->post('orgType'));
-            $unitParent = $em->find('Unit', $this->input->post('parent'));
+            $unitType = $em->find('Entities\UnitType', $this->input->post('unitType'));
+            $orgType = $em->find('Entities\UnitOrganisation', $this->input->post('orgType'));
+            $unitParent = $em->find('Entities\Unit', $this->input->post('parent'));
             
             $newUnit = new Unit();
             $newUnit->setName($this->input->post('unitName'));
