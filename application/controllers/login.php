@@ -23,7 +23,7 @@ class Login extends CI_Controller{
         }
         else
         {
-             redirect('start', 'refresh');
+             redirect(base_url('start'), 'refresh');
         }
     }
     
