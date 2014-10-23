@@ -32,7 +32,7 @@ class Login extends FU_Controller{
         redirect(base_url(), 'refresh');
     }
 
-        public function _check_login(){
+    public function _check_login(){
         //get post data
         $username = $this->input->post('username');
         $password = $this->input->post('password');
