@@ -35,6 +35,11 @@ class Unit extends CoreEntity
      **/
     protected $unitType;
 
+     /**
+     * @ManyToOne(targetEntity="UnitOrganisation", inversedBy="organisations")
+     */
+    protected $organisationType = NULL;
+
     /**
      * @var string
      * @Column(type="string", nullable=false)
