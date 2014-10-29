@@ -31,6 +31,12 @@ class RoleType extends CoreEntity
     protected $roles = null;
 
     /**
+     * @OneToMany(targetEntity="Permission", mappedBy="roleType")
+     * @var Roles[]
+     **/
+    protected $permissions = null;
+
+    /**
      * @param string $name
      */
     public function setName($name)
