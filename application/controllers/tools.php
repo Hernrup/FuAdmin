@@ -30,27 +30,28 @@ class Tools extends CI_Controller {
 
     public function aclTest(){
         $acl = new acl\Acl();
-        $roles = [];
+        $em = $this->doctrine->em;
+        $roles = $em->getRepository('Entities\User')->findBy(array('identificationNr' => 111));
 
-        $role = new Role();
-        $role->setId(1);
+        $unit_access = $em->getRepository('Entities\Unit')->findBy(array('name' => 'Level1_1'));
+        $unit_child = $em->getRepository('Entities\Unit')->findBy(array('name' => 'Level2'));
 
-        $roletype = new RoleType();
-        $roletype->setName("Styrelse");
-        $role->setRoleType($roletype);
+        //check static access
+        echo $acl->isAllowed($roles,"application","staticaccess", null) == true ? 'y':'n';
 
-        array_push($roles,$role);
+        //check access to non static access without unit
+        echo $acl->isAllowed($roles,"application","access", null) == true ? 'y':'n';
 
-        $resource = new acl\StaticResource();
-        $resource->setName("Dynamic");
+        //check non existing permission, should fail
+        echo $acl->isAllowed($roles,"application","nonexistent", null) == false ? 'y':'n';
 
-        echo $acl->isAllowed($roles,"login","register") ? 'y':'n';
-        echo "\n";
-        echo $acl->isAllowed($roles,"login","reset_password") ? 'y':'n';
-        echo "\n";
-        echo $acl->isAllowed($roles,$resource,"test") ? 'y':'n';
-        echo "\n";
-        echo $acl->isAllowed($roles,new stdClass(),"test") ? 'y':'n';
+        //check permission for cascading access
+        echo $acl->isAllowed($roles,"application","access", $unit_access) == true ? 'y':'n';
+        echo $acl->isAllowed($roles,"application","access", $unit_child) == true ? 'y':'n';
+
+        //check permission for non-cascading access
+        echo $acl->isAllowed($roles,"application","access2", $unit_access) == true ? 'y':'n';
+        echo $acl->isAllowed($roles,"application","access2", $unit_child) == false ? 'y':'n';
         echo "\n";
 
 
