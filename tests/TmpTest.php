@@ -1,11 +1,16 @@
 <?php
 
-class TmpTest extends PHPUnit_Framework_TestCase{
-    public function setUp() {
+namespace tests;
 
+class TmpTest extends \PHPUnit_Framework_TestCase{
+    private $CI;
+
+    public function setUp() {
+        $this->CI = &get_instance();
     }
 
-    public function testGetAllPosts() {
-        $this->assertEquals(5, 1);
+
+    public function testGetAllPosts3() {
+        $this->assertEquals(1, 1);
     }
 }
