@@ -118,6 +118,22 @@ class User extends CoreEntity
         $this->cellphone = $cellphone;
     }
 
+    /**
+     * @return Roles[]
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    /**
+     * @param Roles[] $roles
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+    }
+
 
     
     

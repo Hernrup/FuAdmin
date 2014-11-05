@@ -13,7 +13,8 @@ class DBTestTools extends \CLIController {
         try {
             $em = $this->doctrine->em;
 
-            $user = $this->_createUser($em, "Admin", 'a45b6c5c12c38ab7b9a4fb94c618361c5d7c1a95', '111');
+            $user1 = $this->_createUser($em, "Admin", 'a45b6c5c12c38ab7b9a4fb94c618361c5d7c1a95', '111');
+            $user2 = $this->_createUser($em, "Admin2", 'a45b6c5c12c38ab7b9a4fb94c618361c5d7c1a95', '222');
 
             $unit1 = $this->_createUnit($em, "Head", null);
             $unit2 = $this->_createUnit($em, "Level1_1", $unit1);
@@ -23,8 +24,8 @@ class DBTestTools extends \CLIController {
             $roletype1 = $this->_createRoleType($em, "Admin");
             $roletype2 = $this->_createRoleType($em, "Publisher");
 
-            $role = $this->_createRole($em,$roletype1,$user, null);
-            $role2 = $this->_createRole($em,$roletype2,$user, $unit2);
+            $role = $this->_createRole($em,$roletype1,$user1, null);
+            $role2 = $this->_createRole($em,$roletype2,$user1, $unit2);
 
             $perm1 = $this->_createPermission($em, $roletype1, "application", "staticaccess", false);
             $perm1 = $this->_createPermission($em, $roletype2, "application", "access", true);
@@ -95,6 +96,7 @@ class DBTestTools extends \CLIController {
             $this->doctrine->truncateTable("Entities\\RoleType");
             $this->doctrine->truncateTable("Entities\\Unit");
             $this->doctrine->truncateTable("Entities\\UnitType");
+            $this->doctrine->truncateTable("Entities\\Permission");
         }
         catch(Exception $err){
             die($err->getMessage());
