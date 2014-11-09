@@ -24,17 +24,26 @@
           </button>
           <a class="brand" href="#">FuAdmin2</a>
           <div class="nav-collapse collapse">
+
+            
             <p class="navbar-text pull-right">
-              Inloggad som:
-                {{ session.userdata.activeUser.givenname|capitalize  }} 
-                {{ session.userdata.activeUser.lastname|capitalize  }}
-              <a href="{{ base_url() }}login/logout">Logga ut</a>
+            <span>
+                <strong>Aktuell enhet:</strong>
+                {{ activeUnit.getName()  }} |
+            </span>
+            <span>
+                <strong>Inloggad som:</strong>
+                  {{ activeUser.getGivenName()|capitalize  }} 
+                  {{ activeUser.getLastName()|capitalize  }} |
+                <a href="{{ base_url() }}login/logout">Logga ut</a>
+            </span>
             </p>
+            
             <ul class="nav">
               <li class="active"><a href="#">Hem</a></li>
               <li><a href="#about">Min sida</a></li>
               <li><a href="#about">Om</a></li>
-              <li><a href="#contact">Kontakt</a></li>
+              <li><a href="{{base_url}}contact">Kontakt</a></li>
               <li><a href="{{base_url}}administration">Administration</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -48,7 +57,8 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list"><br />
               <li class="nav-header">Avdelning</li>
-              <li><a href="#">Hantera medlemmar</a></li>
+              <li><a href="{{base_url}}unit">Administrera enhet</a></li>
+              <li><a href="{{base_url}}unit/members">Hantera medlemmar</a></li>
               <li class="disabled"><a href="#" >Avregistreringar</a></li>
               <li class="disabled"><a href="#">Planering och Närvaro</a></li>
               <li class="nav-header">Hjälpmedel</li>

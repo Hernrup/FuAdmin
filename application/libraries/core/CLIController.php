@@ -1,5 +1,5 @@
 <?php
-class CLIController extends FU_Controller{
+class CLIController extends CI_Controller{
 
     function __construct()
     {

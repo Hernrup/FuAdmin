@@ -66,6 +66,13 @@ class User extends CoreEntity
      **/
     protected $roles = null;
     
+    /**
+     * @var userSetting
+     * @OneToOne(targetEntity="UserSetting", inversedBy="user")
+     */
+    protected $userSetting;
+
+
     public function getId() {
         return $this->id;
     }
@@ -118,7 +125,14 @@ class User extends CoreEntity
         $this->cellphone = $cellphone;
     }
 
+    public function getUserSetting() {
+        return $this->userSetting;
+    }
 
-    
+    public function setUserSetting($userSetting) {
+        $this->userSetting = $userSetting;
+    }
+
+
     
 }

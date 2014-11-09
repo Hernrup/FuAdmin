@@ -4,8 +4,6 @@ namespace Entities;
 
 
 /**
- *
- *
  * @RoleType(name="unitorganisation")
  * @Entity
  */

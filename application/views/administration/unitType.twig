@@ -1,0 +1,35 @@
+{% extends "templates/layout.twig" %}
+
+{% block mainContent %}
+
+<div class="row-fluid">
+  <div class="span6">
+    <h2>Skapa enhetstyp</h2>
+   <form class="form-signin" method="post" action="{{ base_url }}administration/unitType">
+        {{ validation_errors | raw }}
+
+        <label for="unitTypeName">Enhetstypnamn</label>
+        <input name="unitTypeName"  type="text"     class="input-block-level"   placeholder="Namn (Obligatoriskt)"    id="unitTypeName">
+
+        <button class="btn btn-large btn-primary" type="submit">Skapa</button>
+    </form>   
+
+    <h3>Förljande enhetstyper finns redan</h3>
+        {% for unitType in unitTypes %}
+            <p>
+                {{ unitType.name }} 
+            </p>
+        {% endfor %}
+    
+  </div><!--/span-->
+  
+  
+  <div class="span6">
+    <h2>Administrera typer</h2>
+    <p>Du kan lägga till eller ändra namn på typer men INTE ta bort.</p>
+  </div><!--/span-->
+</div><!--/row-->
+
+
+
+{% endblock %}

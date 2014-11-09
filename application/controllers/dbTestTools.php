@@ -58,6 +58,14 @@ class DBTestTools extends \CLIController {
             $role->setUser($user2);
             $role->setUnit($entityLev1);
             $em->persist($role);
+            
+            $userSetting1 = new Entities\UserSetting();
+            $userSetting1->setStartUnit($entityLev1);
+            $user2->setUserSetting($userSetting1);
+            
+            $em->persist($userSetting1);
+            $em->persist($user2);
+            
 
             $em->flush();
 
@@ -71,6 +79,7 @@ class DBTestTools extends \CLIController {
     public  function down(){
         try {
             $this->doctrine->truncateTable("Entities\\User");
+            $this->doctrine->truncateTable("Entities\\UserSetting");
             $this->doctrine->truncateTable("Entities\\Role");
             $this->doctrine->truncateTable("Entities\\RoleType");
             $this->doctrine->truncateTable("Entities\\Unit");

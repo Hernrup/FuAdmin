@@ -61,6 +61,5 @@ class Tools extends CI_Controller {
 
 		phpinfo();
 	}
-
-	
+        
 }

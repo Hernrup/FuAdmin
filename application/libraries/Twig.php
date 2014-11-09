@@ -6,6 +6,7 @@ class Twig
 	private $_twig;
 	private $_template_dir;
 	private $_cache_dir;
+        private $displayData;
 
 	/**
 	 * Constructor
@@ -68,10 +69,26 @@ class Twig
 		$template = $this->_twig->loadTemplate($template);
 		return $template->render($data);
 	}
+        
+        public function addData($data){
+            //if displayData is null create an array
+            if(!is_array($this->displayData)){$this->displayData = array();}
+            
+            //make input data an array if its not
+            $data = is_array($data) ? $data : get_object_vars($data);
+            
+            //merge the arrays
+            $this->displayData = array_merge($this->displayData, $data);
+        }
 
-	public function displayRoute($data) 
+        public function displayRoute($data) 
 	{
                 $data = is_array($data) ? $data : get_object_vars($data);
+                
+                if(is_array($this->displayData)){
+                    $data = array_merge($this->displayData, $data);
+                }
+                
 		$template = $this->CI->path->join($this->CI->router->fetch_class(),$this->CI->router->fetch_method().".twig");
 		$this->display($template, $data);
 	}
