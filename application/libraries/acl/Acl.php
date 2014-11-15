@@ -77,9 +77,10 @@ class Acl
      * @param $unit
      * @return bool
      */
-    public function isAllowedForRole($role, $resource, $action, $unit)
+    public function isAllowedForRole($role, $resource, $action, $unit, $permissionRepository = null)
     {
-        $permissions = $this->em->getRepository('Entities\Permission')->findBy(array(
+        $repo = $permissionRepository != null ? $permissionRepository : $this->em->getRepository('Entities\Permission');
+        $permissions = $repo->findBy(array(
             'roleType' => $role->getRoleType()->getId(),
             'resource' => $resource,
             'action' => $action

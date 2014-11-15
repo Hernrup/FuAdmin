@@ -13,12 +13,44 @@ class ACLTest extends \PHPUnit_Framework_TestCase{
     public function setUp() {
         $this->CI = &get_instance();
         $this->acl = new \acl\Acl();
-        $this->em = $this->CI->doctrine->em;
 
+        $this->em = $this->CI->doctrine->em;
         $user = $this->em->getRepository('Entities\User')->findOneBy(array('identificationNr' => 111));
         $this->roles = $user->getRoles();
         $this->unit_access = $this->em->getRepository('Entities\Unit')->findOneBy(array('name' => 'Level1_1'));
         $this->unit_child = $this->em->getRepository('Entities\Unit')->findOneBy(array('name' => 'Level2'));
+
+//        $unit1 = $this->getMock('Entities\Unit');
+//        $unit1->method('getParent')->will($this->returnValue(null));
+//
+//        $unit2 = $this->getMock('Entities\Unit');
+//        $unit2->method('getParent')->will($this->returnValue($unit1));
+//
+//        $unit3 = $this->getMock('Entities\Unit');
+//        $unit3->method('getParent')->will($this->returnValue($unit1));
+//
+//        $unit4 = $this->getMock('Entities\Unit');
+//        $unit4->method('getParent')->will($this->returnValue($unit2));
+//
+//        $roletype1 = $this->getMock('Entities\RoleType');
+//
+//        $roletype2 = $this->getMock('Entities\RoleType');
+//
+//        $role = $this->getMock('Entities\Role');
+//        $role->method('getRoleType')->will($this->returnValue($roletype1));
+//        $role->method('getUnit')->will($this->returnValue(null));
+//
+//        $role2 = $this->getMock('Entities\Role');
+//        $role2->method('getRoleType')->will($this->returnValue($roletype1));
+//        $role2->method('getUnit')->will($this->returnValue($unit2));
+//
+//        $role2 = $this->getMock('Entities\Permission');
+//        $role2->method('getRoleType')->will($this->returnValue($roletype1));
+//
+//
+//        $perm1 = $this->_createPermission($em, $roletype1, "application", "staticaccess", false);
+//        $perm1 = $this->_createPermission($em, $roletype2, "application", "access", true);
+//        $perm1 = $this->_createPermission($em, $roletype2, "application", "access2", false);
     }
 
 
