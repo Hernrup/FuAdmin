@@ -1,6 +1,7 @@
 /vendor/*
 /application/cache/*
 /application/logs/*
+/application/models/Proxies/*
 /nbproject/
 .idea
 composer.lock

@@ -6,7 +6,8 @@
     	"doctrine/migrations": "*@dev",
     	"ellislab/codeigniter": "dev-release/3.0",
     	"twig/twig": "1.9.1",
-    	"symfony/yaml": "*"
+    	"symfony/yaml": "*",
+        "phpunit/phpunit": "4.3.*"
     },
     "autoload": { 
         "classmap": [

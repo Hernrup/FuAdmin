@@ -1,91 +1,136 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mhe
- * Date: 11/10/14
- * Time: 19:24
- */
-
 
 namespace acl;
 
-class Acl {
+class Acl
+{
 
-   protected $staticResources;
+    protected $CI;
+    protected $em;
 
     /**
      *
      */
     function __construct()
     {
-        $this->staticResources = [];
-        $this->setupStaticPermissions();
+        $this->CI =& get_instance();
+        $this->em = $this->CI->doctrine->em;
     }
 
     /**
-     *
+     * @return array
+     * @throws \Exception
      */
-    protected function setupStaticPermissions(){
-        $this->addStaticResource($this->newStaticResource()
-            ->setName("login")
-            ->allow("reset_password")
-            ->allow("auth")
-        );
-    }
+    public function getUserRoleCollection()
+    {
 
-    /**
-     * @return StaticResource
-     */
-    protected function newStaticResource(){
-        return new StaticResource();
-    }
+        // fetch session
+        $userId = $this->CI->session->userdata('activeUser');
 
-    /**
-     * @param StaticResource $res
-     */
-    protected function addStaticResource(StaticResource $res){
-        $this->staticResources[$res->getName()] = $res;
+        // verify session existance
+        if (!$userId) {
+            return array();
+        }
+
+        //fetchUser
+        $user = $this->em->getRepository('Entities\User')->findBy(array('id' => $userId));
+        if (!$user) {
+            throw new \Exception("Logged in user could not be found");
+        }
+
+        return $user->getRoles();
     }
 
     /**
      * @param $resource
-     * @return mixed
+     * @param $action
+     * @param $unit
+     * @throws \Exception
      */
-    protected function findStaticResource($resource){
-
-        if(array_key_exists($resource,$this->staticResources)){
-            return $this->staticResources[$resource];
-        }
+    public function isAllowed($resource, $action, $unit)
+    {
+        $this->isAllowedForRole($this->getUserRoleCollection(), $resource, $action, $unit);
     }
 
     /**
      * @param array $roleCollection
      * @param $resource
      * @param $action
-     * @return mixed
-     * @throws \Exception
+     * @param $unit
+     * @return bool
      */
-    public function isAllowed(Array $roleCollection, $resource, $action){
-        $resourceObject = null;
-
-        if(is_string($resource)){
-            $resourceObject = $this->findStaticResource($resource);
-            if($resourceObject === null){
-                throw new \Exception(sprintf("Resource %s not found", $resource->getName()));
+    public function isAllowedForRoleCollection(Array $roleCollection, $resource, $action, $unit)
+    {
+        // check each role for access logic
+        foreach ($roleCollection as $role) {
+            if ($this->isAllowedForRole($role, $resource, $action, $unit)) {
+                return true;
             }
         }
-
-        if(is_object($resource)){
-            if(!($resource instanceof iAclResource)){
-                throw new \Exception(sprintf("ResourceObject has to be instance of iAclResource"));
-            }
-            $resourceObject = $resource;
-        }
-
-        if($resourceObject === null){
-            throw new \Exception(sprintf("Could not evaluate resource"));
-        }
-
-        return $resourceObject->isAllowed($action);
+        return false;
     }
-} 
+
+    /**
+     * @param $role
+     * @param $resource
+     * @param $action
+     * @param $unit
+     * @return bool
+     */
+    public function isAllowedForRole($role, $resource, $action, $unit, $permissionRepository = null)
+    {
+        $repo = $permissionRepository != null ? $permissionRepository : $this->em->getRepository('Entities\Permission');
+        $permissions = $repo->findBy(array(
+            'roleType' => $role->getRoleType()->getId(),
+            'resource' => $resource,
+            'action' => $action
+        ));
+
+        // check permission
+        if (count($permissions) == 0) {
+            return false;
+        }
+
+        // not dependent on unit
+        if ($unit == null) {
+            return true;
+        }
+
+        //check permission on exact unit
+        if($role->getUnit()->getId() == $unit->getId()){
+            return true;
+        }
+
+        // check for cascading params
+        foreach ($permissions as $perm) {
+            if ($perm->getInherit() == true) {
+                return ($this->checkUnitIdRecursive($role->getUnit(),$unit));
+            }
+        }
+
+        // access could not be resolved, revoke access
+        return false;
+    }
+
+    /**
+     * @param $requiredUnit
+     * @param $unitUnderTest
+     * @return bool
+     */
+    public function checkUnitIdRecursive($requiredUnit, $unitUnderTest){
+        // required unit found, quit
+        if ($requiredUnit->getId() == $unitUnderTest->getId()) {
+            return true;
+        }
+
+        // parent of current unit is null, search failed
+        if($unitUnderTest->getParent() == null){
+            return false;
+        }
+
+        // parent exists, continue search on parent
+        return $this->checkUnitIdRecursive($requiredUnit, $unitUnderTest->getParent());
+    }
+
+}
+

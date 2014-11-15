@@ -8,7 +8,7 @@ use acl\IAclRole;
  * @Role(name="role")
  * @Entity
  */
-class Role extends CoreEntity implements iAclRole
+class Role extends CoreEntity
 {
     /**
      * @var int
@@ -34,6 +34,14 @@ class Role extends CoreEntity implements iAclRole
     protected $unit;
 
     /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * @param int $id
      */
     public function setId($id)
@@ -42,16 +50,11 @@ class Role extends CoreEntity implements iAclRole
     }
 
     /**
-     * @return int
+     * @return mixed
      */
-    public function getId()
+    public function getRoleType()
     {
-        return $this->id;
-    }
-
-    public function getAclRoleId()
-    {
-        return $this->getId();
+        return $this->roleType;
     }
 
     /**
@@ -63,19 +66,11 @@ class Role extends CoreEntity implements iAclRole
     }
 
     /**
-     * @param mixed $user
-     */
-    public function setUser($user)
-    {
-        $this->user = $user;
-    }
-
-    /**
      * @return mixed
      */
-    public function getUser()
+    public function getUnit()
     {
-        return $this->user;
+        return $this->unit;
     }
 
     /**
@@ -89,10 +84,19 @@ class Role extends CoreEntity implements iAclRole
     /**
      * @return mixed
      */
-    public function getUnit()
+    public function getUser()
     {
-        return $this->unit;
+        return $this->user;
     }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
 
 
 
