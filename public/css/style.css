@@ -12,3 +12,7 @@
     display: block;
     padding:1em 0 0 0;
 }
+
+form label{
+    font-weight: bold;
+}

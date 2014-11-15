@@ -175,6 +175,49 @@ public function unitOrg(){
         } 
     }
     
+public function roleType(){
+        //Definera variabler
+        $em = $this->doctrine->em;
+        $data = new stdClass();
+        
+        //load CI Resurces
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        
+        //Get some data
+        $data->roleTypes = $em->getRepository('Entities\RoleType')->findAll();        
+        
+        //Set rules
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        $this->form_validation->set_rules('roleTypeName', 'Rolltypsnamn', 'required|callback__alpha_int|is_unique[RoleType.name]');
+        $this->form_validation->set_message('required', 'Fältet %s är obligatostiskt');
+        $this->form_validation->set_message('alpha_numeric', 'Fältet %s får endast innehålla siffor och bokstäver');
+        $this->form_validation->set_message('is_unique', 'Fältet %s måste vara unikt');
+        
+        if ($this->form_validation->run() == FALSE)
+        {
+            //load validation errors to twig
+            $data->validation_errors = validation_errors();
+            $this->twig->displayRoute($data);
+        }
+        else
+        {
+            try {
+
+                $newRoleType = new Entities\RoleType();
+                $newRoleType->setName($this->input->post('roleTypeName'));    
+
+                $em->persist($newRoleType);
+                $em->flush();
+
+                redirect(base_url('administration/roleType'), 'refresh');
+            }
+            catch(Exception $err){
+                die($err->getMessage());
+            }
+        } 
+    }
+    
     public function _alpha_int($str)
     {
         $this->form_validation->set_message('_alpha_int', 'Du kan bara använda text');

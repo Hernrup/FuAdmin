@@ -3,8 +3,46 @@
 {% block mainContent %}
 
 
-<div class="row-fluid">
-    <h2>Här kommer admin för unit</h2>
+<div class="row-fluid">    
+    <div class="span6">
+        <h2>Denna sida är ej i produktion</h2>
+        <form method="post" action="{{ base_url }}unit">
+            {{ validation_errors | raw }}
+
+            <label for="name">Namn</label>
+            <input id="name" type="text" class="input-block-level" value="{{ unitName }}" readonly>
+            
+            <label for="orgType">Organisationstillhörighet</label>
+            <input id="orgType" type="text" class="input-block-level" placeholder="(Denna kan du inte ändra på)" readonly>
+            
+            <label for="unitType">Enhetstyp</label>
+            <input id="unitType" type="text" class="input-block-level" placeholder="(Denna kan du inte ändra på)" readonly>
+            
+            <label for="parent">Förälder</label>
+            <input id="parent" type="text" class="input-block-level" placeholder="(Denna kan du inte ändra på)" readonly>
+            
+            <label for="identificationnumber">Organisationsnummer</label>
+            <input name="identificationnumber" id="identificationnumber" type="text" class="input-block-level" placeholder="Organisationsnummer (######-##)" value="{{ unitIdentificationNr }}">
+            
+            <label for="email">E-post</label>
+            <input name="email" id="email" type="text" class="input-block-level" placeholder="email" value="{{ unitEmail }}">
+            
+            <label for="phone">Telefon</label>
+            <input name="phone" id="phone" type="text" class="input-block-level" placeholder="Telefonnummer" value="{{ unitCellphone }}">
+            
+            <input name="unitId" type="hidden" value="{{ unitId }}">
+
+            <button class="btn btn-large btn-primary" type="submit">Spara</button>
+        </form>
+    </div>
+        
+    <div class="span6">
+        <h2>Administration</h2>
+        <p>Här administrerar du din enhet (avdelning, förening, förbund osv.). </p>
+        <p>Vi ändringsbehov av stängda fält ber vi er ta kontakt med en systemadministratör.</p>
+    </div>
+    
+    
 </div><!--/row-->
           
 {% endblock %}

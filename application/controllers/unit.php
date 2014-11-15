@@ -20,10 +20,31 @@ class Unit extends FU_Controller{
     }
     
     public function index(){
-        //Definera variabler
+        //Definera variabler and load resurces
         $em = $this->doctrine->em;
         $data = new stdClass();
-                
+        $this->load->library('form_validation');
+              
+        //get data for form
+        $data->unitId = $this->activeUnit->getId();
+        $data->unitName = $this->activeUnit->getName();
+        
+        $data->unitEmail = $this->activeUnit->getEmail();
+        $data->unitIdentificationNr = $this->activeUnit->getIdentificationNr();
+        $data->unitCellphone = $this->activeUnit->getCellphone();
+        
+        //if form is runned we check data and send back
+        if ($this->form_validation->run() == FALSE)
+        {
+            //load validation errors to twig
+            $data->validation_errors = validation_errors();
+            
+            //get the data
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+        }
 
         $this->twig->displayRoute($data);
         
