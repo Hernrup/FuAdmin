@@ -1,0 +1,35 @@
+{% extends "templates/layout.twig" %}
+
+{% block mainContent %}
+
+<div class="row-fluid">
+  <div class="span6">
+    <h2>Skapa "roleType" </h2>
+   <form class="form-signin" method="post" action="{{ base_url }}administration/roleType">
+        {{ validation_errors | raw }}
+
+        <label for="roleTypeName">Organisationsnamn</label>
+        <input name="roleTypeName"  type="text"     class="input-block-level"   placeholder="Namn (Obligatoriskt)"    id="roleTypeName">
+
+        <button class="btn btn-large btn-primary" type="submit">Skapa</button>
+    </form>   
+
+    <h3>Förljande roleTypes finns redan</h3>
+        {% for roleType in roleTypes %}
+            <p>
+                {{ roleType.name|capitalize }} 
+            </p>
+        {% endfor %}
+    
+  </div><!--/span-->
+  
+  
+  <div class="span6">
+    <h2>Administrera organisationer</h2>
+    <p>Du kan lägga till eller ändra namn på organisationer men INTE ta bort.</p>
+  </div><!--/span-->
+</div><!--/row-->
+
+
+
+{% endblock %}

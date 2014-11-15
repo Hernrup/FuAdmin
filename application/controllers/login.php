@@ -39,7 +39,7 @@ class Login extends CI_Controller{
         
         //load own library
         $this->load->library('auth');
-        $this->form_validation->set_message('check_login', 'Ditt användarnamn eller lösenord är fel!');
+        $this->form_validation->set_message('_check_login', 'Ditt användarnamn eller lösenord är fel!');
         
         //if true login sets session and data
         if ($this->auth->login($username, $password)): return true; else: return false; endif;

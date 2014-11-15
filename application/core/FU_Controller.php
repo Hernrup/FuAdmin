@@ -1,6 +1,8 @@
 <?php
 class FU_Controller extends CI_Controller{
     
+    var $activeUser;
+    
     function __construct()
     {
         parent::__construct();
@@ -13,5 +15,9 @@ class FU_Controller extends CI_Controller{
             redirect(base_url(), 'refresh');
         }
          
+        $this->twig->addData(array(
+            'activeUser' => $this->auth->getSessionUser(),
+            'activeUnit' => $this->auth->getSessionUnit()
+            ));
     }
 }
