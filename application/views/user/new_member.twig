@@ -1,0 +1,96 @@
+{% extends "templates/layout.twig" %}
+
+{% block mainContent %}
+ 
+    
+<form class="form-horizontal" method="post" action="{{ base_url }}user/new_member">
+    {{ validation_errors | raw }}
+    <div class="panel panel-default">
+      <h3 class="panel-title">Personuppgifter</h3>
+        <div class="panel-body">
+          <div class="form-group">
+            <label for="identificationNr">Personnummer</label>
+            <input type="text" class="form-control" id="identificationNr" name="identificationNr" placeholder="Personnummer (######-NNNN)">
+          </div>
+          <div class="form-group">
+            <label for="givenname">För- och efternamn</label>
+            <input type="text" class="form-control" id="givenname" name="givenname" placeholder="Förnamn">
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Efternamn">
+          </div>
+        </div>
+    </div>
+    
+    <div class="panel panel-default">
+      <h3 class="panel-title">Kontaktuppgifter (BARA MAIL SOM ANVÄNDS)</h3>
+        <div class="panel-body">
+          <div class="form-group">
+            <label for="">Gatuadress</label>
+            <input type="text" class="form-control" id="" placeholder="Gatuadress">
+          </div>
+            
+          <div class="form-group">
+            <label for="">Postnummer och postort</label>
+            <input type="text" class="form-control" id="" placeholder="Postnummer (### ##)">
+            <input type="text" class="form-control" id="" placeholder="Postort">
+          </div>
+            
+          <div class="form-group">
+            <label for="">Mobiltelefon (sms) samt telefon2</label>
+            <input type="tel" class="form-control" id="" placeholder="Mobiltelefon (####-######)">
+            <input type="tel" class="form-control" id="" placeholder="Alternativ telefon">
+          </div>
+            
+          <div class="form-group">
+            <label for="">E-post</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="E-post" size="80">
+          </div>
+        </div>
+    </div>
+    
+    <div class="panel panel-default">
+      <h3 class="panel-title">Uppgifter för utrustning (ANVÄNDS EJ)</h3>
+        <div class="panel-body">
+          <div class="form-group">
+            <label for="">Längd (cm)</label>
+            <input type="text" class="form-control" id="" placeholder="Längd (cm)">
+          </div>
+            
+          <div class="form-group">
+            <label for="">Vikt (kg)</label>
+            <input type="text" class="form-control" id="" placeholder="Vikt (kg)">
+          </div>
+            
+          <div class="form-group">
+            <label for="">Skostorlek (mm)</label>
+            <input type="text" class="form-control" id="" placeholder="Skostorlek (mm)">
+          </div>
+    </div>
+      
+    <div class="panel panel-default">
+        <div class="form-group">
+            <button type="submit" class="btn btn-large">Spara</button>
+        </div>
+    </div>
+      
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

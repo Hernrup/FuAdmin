@@ -34,14 +34,14 @@ class User extends CoreEntity
 
    /**
      * @var string
-     * @Column(type="string", nullable=false, unique=true)
+     * @Column(type="string", nullable=true, unique=true)
      */
     protected $email;
     
     /**
      *
      * @var string
-     * @Column (type="string", nullable=false, length=255)
+     * @Column (type="string", nullable=true, length=255)
      */
     protected $password;
 
@@ -56,7 +56,7 @@ class User extends CoreEntity
     /**
      *
      * @var string
-     * @Column (type="string")
+     * @Column (type="string", nullable=true)
      */
     protected $cellphone;
 
@@ -71,6 +71,7 @@ class User extends CoreEntity
      * @OneToOne(targetEntity="UserSetting", inversedBy="user")
      */
     protected $userSetting;
+    
 
 
     public function getId() {

@@ -78,7 +78,8 @@ class Unit extends CoreEntity
      * @OneToMany(targetEntity="UserSetting", mappedBy="startUnit") 
      */
     protected $userSetting;
-
+    
+    
 
     function __construct() {
         $this->children = new \Doctrine\Common\Collections\ArrayCollection();
@@ -152,5 +153,11 @@ class Unit extends CoreEntity
     public function setOrganisationType($organisationType) {
         $this->organisationType = $organisationType;
     }
+    
+    function getRoles() {
+        return $this->roles;
+    }
+
+
 
 }

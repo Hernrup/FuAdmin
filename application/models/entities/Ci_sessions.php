@@ -14,7 +14,7 @@ class Ci_sessions extends CoreEntity{
      * @id
      * @Column (type="string", length=40, nullable=false, options={"default":0})
      */
-    protected $session_id;
+    protected $id;
     
     /**
      *
@@ -22,25 +22,18 @@ class Ci_sessions extends CoreEntity{
      * @Column (name="ip_address",type="string", length=45, nullable=false, options={"default":0})
      */
     protected $ip_address;
-    
-    /**
-     *
-     * @var string
-     * @Column (type="string", length=120, nullable=false) 
-     */
-    protected $user_agent;
-    
+       
     /**
      *
      * @var int
      * @Column (type="integer", length=10, nullable=false, options={"default":0, "unsigned":true})
      */
-    protected $last_activity;
+    protected $timestamp;
     
     /**
      *
      * @var text
      * @Column (type="text", nullable=false)
      */
-    protected $user_data;
+    protected $data;
 }

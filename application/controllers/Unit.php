@@ -54,8 +54,17 @@ class Unit extends FU_Controller{
         //Definera variabler
         $em = $this->doctrine->em;
         $data = new stdClass();
-                
-
+        
+        //get the roles to unit
+        //$this->activeUnit
+        
+        //get
+        $qb = $em->createQueryBuilder()
+            ->select('*')
+            ->from('Entity\User', 'u')
+            ->leftjoin('u.id', 'Entity\Role');
+        
+        
         $this->twig->displayRoute($data);
     }
 
